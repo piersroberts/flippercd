@@ -75,6 +75,7 @@ enum UsbCdromCustomEvent {
     UsbCdromCustomEventForceEject,
     UsbCdromCustomEventConnectionError,
     UsbCdromCustomEventFileSelect,
+    UsbCdromCustomEventAbout,
 };
 
 void usb_cdrom_app_show_loading_popup(UsbCdromApp* app, bool show);

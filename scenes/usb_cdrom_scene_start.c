@@ -10,6 +10,8 @@ static void usb_cdrom_item_select(void* context, uint32_t index) {
     UsbCdromApp* app = context;
     if(index == 0) {
         view_dispatcher_send_custom_event(app->view_dispatcher, UsbCdromCustomEventFileSelect);
+    } else if(index == 2) {
+        view_dispatcher_send_custom_event(app->view_dispatcher, UsbCdromCustomEventAbout);
     }
 }
 
@@ -34,6 +36,8 @@ void usb_cdrom_scene_start_on_enter(void* context) {
     variable_item_set_current_value_index(item, app->disc_type);
     variable_item_set_current_value_text(item, disc_type_names[app->disc_type]);
 
+    variable_item_list_add(app->variable_item_list, "About", 0, NULL, NULL);
+
     variable_item_list_set_enter_callback(app->variable_item_list, usb_cdrom_item_select, app);
     view_dispatcher_switch_to_view(app->view_dispatcher, UsbCdromAppViewStart);
 }
@@ -44,6 +48,9 @@ bool usb_cdrom_scene_start_on_event(void* context, SceneManagerEvent event) {
     if(event.type == SceneManagerEventTypeCustom) {
         if(event.event == UsbCdromCustomEventFileSelect) {
             scene_manager_next_scene(app->scene_manager, UsbCdromSceneFileSelect);
+            return true;
+        } else if(event.event == UsbCdromCustomEventAbout) {
+            scene_manager_next_scene(app->scene_manager, UsbCdromSceneAbout);
             return true;
         }
     }
