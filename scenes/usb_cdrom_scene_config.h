@@ -1,0 +1,5 @@
+ADD_SCENE(usb_cdrom, start, Start)
+ADD_SCENE(usb_cdrom, file_select, FileSelect)
+ADD_SCENE(usb_cdrom, work, Work)
+ADD_SCENE(usb_cdrom, bad_image, BadImage)
+ADD_SCENE(usb_cdrom, usb_locked, UsbLocked)
