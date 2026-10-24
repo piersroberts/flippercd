@@ -9,8 +9,13 @@ void usb_cdrom_scene_about_on_enter(void* context) {
         0,
         128,
         64,
+        // the scroll element breaks lines mid word, so they're broken here to fit
         "\e#USB CD-ROM v" FAP_VERSION "\n"
-        "Emulates a USB CD/DVD-ROM drive. The disc is an .iso image from the SD card.\n\n"
+        "Emulates a USB\n"
+        "CD/DVD-ROM drive.\n"
+        "The disc is an .iso\n"
+        "image from the SD\n"
+        "card.\n\n"
         "Put images in\n"
         "apps_data/usb_cdrom\n\n"
         "\e#Source code\n"
