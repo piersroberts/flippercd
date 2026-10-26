@@ -1,3 +1,8 @@
+## v0.1.2
+
+- Added catalog metadata and screenshots for the Flipper Application Catalog
+- No functional changes since v0.1.1
+
 ## v0.1.1
 
 - First release: USB CD/DVD-ROM emulation from ISO images
